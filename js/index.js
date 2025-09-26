@@ -44,7 +44,7 @@ document.getElementById("resultado").innerText="El resultado de la operación es
 
 
 
-//Adios();
-//Saludo();
+Adios();
+Saludo();
 
 
