@@ -1,0 +1,1 @@
+//Cookies y sesiones las trabajo en este archivo.

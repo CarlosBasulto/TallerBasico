@@ -1,0 +1,62 @@
+
+<div id="contenedor">
+ <div id="lista-de-productos"></div>
+</div>
+
+<script>
+
+function agregarProductosAHTML(listaDeProductos, idContenedor) {
+  // 1. Selecciona el contenedor donde se mostrarán los productos
+  const contenedor = document.getElementById(idContenedor);
+
+  if (!contenedor) {
+    console.error(`No se encontró un elemento con el ID: ${idContenedor}`);
+    return;
+  }
+
+  // 2. Limpia el contenido anterior si es necesario (opcional)
+  // contenedor.innerHTML = '';
+
+  // 3. Itera sobre la lista de productos
+  listaDeProductos.forEach(producto => {
+    // 3a. Crea un elemento para el producto (ej. un <div>)
+    const divProducto = document.createElement('div');
+
+    // 3b. Crea los elementos para el nombre y precio
+    const nombreProducto = document.createElement('h3');
+    nombreProducto.textContent = producto.nombre; // Asume que cada objeto tiene una propiedad 'nombre'
+
+    const precioProducto = document.createElement('p');
+    precioProducto.textContent = `$${producto.precio}`; // Asume una propiedad 'precio'
+
+    // 3c. Agrega los elementos de texto al div del producto
+    divProducto.appendChild(nombreProducto);
+    divProducto.appendChild(precioProducto);
+
+    // 3d. Opcional: Agrega clases o estilos para el producto
+    divProducto.classList.add('producto-item'); // Agrega una clase para dar estilos
+
+    // 3e. Añade el div del producto al contenedor principal
+    contenedor.appendChild(divProducto);
+  });
+}
+
+// --- Ejemplo de uso ---
+
+// 1. Tu lista de productos (array de objetos)
+const misProductos = [
+  { id: 1, nombre: 'Camisa', precio: 25.99 },
+  { id: 2, nombre: 'Pantalón', precio: 45.50 },
+  { id: 3, nombre: 'Zapatos', precio: 70.00 }
+];
+
+// 2. El ID del elemento HTML donde quieres que se muestren los productos
+const idDelContenedorHTML = 'lista-de-productos';
+
+// 3. Llama a la función para agregar los productos
+// Asegúrate de que este código se ejecute después de que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+  agregarProductosAHTML(misProductos, idDelContenedorHTML);
+});
+
+</script>
