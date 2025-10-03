@@ -13,8 +13,7 @@ foreach ($frutas as $fruta)
 
 foreach ($oProducto as $p)
 {
- 
-  echo $p;
+   echo $p;
 }
 
 

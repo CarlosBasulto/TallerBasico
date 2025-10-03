@@ -10,7 +10,7 @@ class Persona
    saludar()
    {
     alert(this.nombre);
-    
+   
    }
 
 

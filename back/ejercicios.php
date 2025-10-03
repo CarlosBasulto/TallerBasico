@@ -172,5 +172,6 @@ echo $x;
 echo "</br></br>";
 
 
+&& || ! and or 
 
 ?>
