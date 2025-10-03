@@ -93,7 +93,7 @@ $miNombre+=" Basulto Pardo";
 echo $miNombre;
 */      
 
-
+//
 $miNombre="Carlos";
 //$miNombre = $miNombre . " Basulto Pardo";
 $miNombre.=" Basulto Pardo";
